@@ -31,4 +31,8 @@ export namespace URLUtil {
     }
     return url;
   }
+
+  export function delParam(url: string, key: string) {
+    return url.replace(new RegExp(`((?<=\\?)&?${key}=[^&]*&?)|(&?${key}=[^&]*)`, "g"), "");
+  }
 }
